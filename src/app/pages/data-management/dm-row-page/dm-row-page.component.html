@@ -1,0 +1,20 @@
+<section class="page-content">
+  <h2>Données Brutes</h2>
+  <div class="content-wrapper">
+    <article class="dataset-stats">
+      <app-statistic-panel [icon]="'icon-arrows-h'" [name]="'Population'" [value]="dataset.countRows"></app-statistic-panel>
+      <app-statistic-panel [icon]="'icon-arrows-v'" [name]="'Attributs'" [value]="dataset.countColumns"></app-statistic-panel>
+      <app-statistic-panel [icon]="'icon-chart-line'" [name]="'Att. numériques'" [value]="dataset.countNumericalAttributes"></app-statistic-panel>
+      <app-statistic-panel [icon]="'icon-chart-pie'" [name]="'Att. qualitatifs'" [value]="dataset.countContextualAttributes"></app-statistic-panel>  
+    </article>
+    <article class="dataset-grid">
+      <ag-grid-angular
+        style="height: 100%;"
+        class="data-table ag-theme-alpine"
+        [rowData]="dataset.rowData"
+        [columnDefs]="columnDef"
+        [gridOptions]="gridOptions">
+      </ag-grid-angular>
+    </article>
+  </div>
+</section>

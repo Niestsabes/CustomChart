@@ -1,0 +1,35 @@
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    > *:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+article.dataset-stats {
+    display: flex;
+    justify-content: flex-start;
+
+    > * {
+        flex: 1;
+    }
+
+    > *:not(:last-child) {
+        margin-right: 10px;
+    }
+}
+
+article.dataset-grid {
+    height: 500px;
+}
+
+article.dataset-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    > *:not(:last-child) {
+        margin-right: 10px;
+    }
+}

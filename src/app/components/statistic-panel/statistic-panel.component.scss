@@ -1,0 +1,33 @@
+$component-height: 32px;
+$component-radius: 4px;
+
+.statistic-panel {
+  border-radius: $component-radius;
+  background-color: white;
+  display: flex;
+  overflow: hidden;
+  height: $component-height;
+}
+
+.statistic-panel-icon {
+  padding: $component-radius;
+  height: $component-height;
+  width: $component-height;
+  background-color: green;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.statistic-panel-text {
+  padding: $component-radius calc(2 * #{$component-radius});
+  font-weight: bold;
+  flex: 1;
+}
+
+.statistic-panel-value {
+  padding: $component-radius calc(2 * #{$component-radius});
+  text-align: right;
+}

@@ -1,0 +1,82 @@
+@import "./../../../assets/styles/colors.scss";
+@import "./../../../assets/styles/functions.scss";
+
+$menu-item-height: 24px;
+$menu-item-margin: 4px;
+$menu-item-level-padding: 10px;
+$menu-item-level-size-reduction: 0.85;
+
+.main-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: $app-black;
+    color: $app-white;
+    height: 100%;
+}
+
+[class ^= 'main-menu-item'] {
+    border-left: 4px solid transparent;
+    outline: none;
+    display: flex;
+
+    &:hover {
+        background-color: rgba($app-white, 0.1);
+        border-left: 4px solid $app-primary-color-e;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    &:focus {
+        border-left: 4px solid $app-white;
+    }
+}
+
+.main-menu-icon-wrapper {
+    margin: $menu-item-margin;
+    text-align: center;
+}
+
+.main-menu-text-wrapper {
+    display: block;
+    flex: 1;
+}
+
+.main-menu-expansion-btn {
+    transition: 0.3s;
+
+    &:not(.closed){
+        transform: rotate(180deg);
+    }
+}
+
+.main-menu-sublist-wrapper {
+    overflow: hidden;
+    height: auto;
+    transform-origin: 50% 0;
+    transform: scaleY(1);
+    transition: height 0.3s ease;
+    transition: transform 0.3s ease;
+
+    &.closed {
+        transform: scaleY(0);
+        height: 0;
+    }
+}
+
+@for $level from 0 through 3 {
+    .main-menu-item-#{$level} {
+        padding-left: calc(#{$menu-item-level-padding} * #{$level});
+        font-size: 1rem * pow($menu-item-level-size-reduction, $level);
+
+        .main-menu-icon-wrapper {
+            width: $menu-item-height * pow($menu-item-level-size-reduction, $level);
+            height: $menu-item-height * pow($menu-item-level-size-reduction, $level);
+        }
+
+        .main-menu-text-wrapper {
+            margin: $menu-item-margin * pow($menu-item-level-size-reduction, $level);
+        }
+        
+    }
+}

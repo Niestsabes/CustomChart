@@ -1,0 +1,13 @@
+.ag-row .ag-cell {
+    display: flex;
+    align-items: center;
+}
+
+.ag-theme-alpine .ag-cell-inline-editing {
+    height: 30px;
+    border-radius: 0;
+}
+
+.ag-theme-alpine input {
+    border-radius: 0!important;
+}

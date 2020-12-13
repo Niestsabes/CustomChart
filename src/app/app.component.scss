@@ -1,0 +1,25 @@
+@import './../assets/styles/colors.scss';
+
+.app-wrapper {
+    display: grid;
+    height: 100vh;
+    min-height: 100vh;
+    grid-template-areas: "header header" "menu content";
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 48px calc(100vh - 48px);
+}
+
+.app-header {
+    grid-area: header;
+    background-color: $app-primary-color-a;
+}
+
+.app-menu {
+    grid-area: menu;
+    min-height: 100%;
+}
+
+.app-content {
+    grid-area: content;
+    min-height: 100%;
+}

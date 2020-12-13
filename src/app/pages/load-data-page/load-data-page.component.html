@@ -1,0 +1,44 @@
+<section class="page-content">
+  <article id="instructions">
+    <h2>Instructions</h2>
+    <p>
+      Pour pouvoir analyser vos données, notre solution d'analyse en ligne gratuite requiert uniquement les choses
+      suivantes :
+    </p>
+    <ul>
+      <li><strong>Format :</strong> Un fichier .csv.</li>
+      <li><strong>Variables/Individus :</strong> Les variables doivent être en colonne, et les individus en ligne.</li>
+      <li><strong>Taille :</strong> Pas de restriction sur la taille du jeu de données.</li>
+    </ul>
+  </article>
+  <article id="loader">
+    <h2>Chargez votre jeu de données</h2>
+    <p>
+      Pour débuter l'analyse de vos données, il vous suffit simplement de charger votre fichier de données
+      et de choisir le séparateur puis d'appuyer sur <strong>Lancer l'analyse</strong>.
+      Assurez-vous que le format de votre fichier est conforme aux instructions.
+    </p>
+    <form [formGroup]="importFormGroup" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label class="form-label" for="attributeSeparator">Séparateur d'attribut</label>
+        <select formControlName="attributeSeparator" class="form-control" name="attributeSeparator">
+          <option *ngFor="let separator of listSeparators" [value]="separator.value">
+            {{ separator.label }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="rowSeparator">Séparateur de ligne</label>
+        <select formControlName="rowSeparator" class="form-control" name="rowSeparator">
+          <option [value]="'\n'">Retour à la ligne</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="datafile">Sélectionner un fichier</label>
+        <input formControlName="datafile" class="form-control-file" name="datafile" type="file"
+          (change)="onFileDropped($event.target.files)" />
+      </div>
+      <button class="btn btn-primary">Analyser</button>
+    </form>
+  </article>
+</section>

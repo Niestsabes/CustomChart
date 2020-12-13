@@ -1,0 +1,51 @@
+.card {
+
+}
+
+.card-header {
+    padding: 8px;
+    background-color: lightseagreen;
+
+    > .btn {
+        padding: 0;
+        border: none;
+        background: none;
+        color: white;
+        width: 100%;
+        text-align: left;
+        font-weight: bold;
+    }
+}
+
+.card-body {
+    padding: 8px;
+}
+
+.col-form-label {
+    padding-top: 4px;
+    padding-bottom: 4px
+}
+
+.form-group {
+    margin-bottom: 0.2rem;
+}
+
+.form-group.form-check {
+    margin-bottom: 4px;
+}
+
+.form-label {
+    margin-bottom: 0.2rem;
+}
+
+.list-group-item {
+    padding: 0.2rem;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.list-group-item-action {
+    cursor: pointer;
+}

@@ -1,0 +1,18 @@
+<ul class="main-menu">
+  <li *ngFor="let item of menu" [routerLink]="item.route">
+    <div [class]="menuItemClass" [id]="item.id">
+      <div class="main-menu-icon-wrapper">
+        <span [class]="item.icon"></span>
+      </div>
+      <span class="main-menu-text-wrapper">{{ item.label }}</span>
+      <div *ngIf="item.children" class="main-menu-icon-wrapper main-menu-expansion-btn"
+          [ngClass]="{ closed: item.closed }"
+          (click)="toggleSubMenu(item)">
+        <span class="icon-chevron-down"></span>
+      </div>
+    </div>
+    <div class="main-menu-sublist-wrapper" [ngClass]="{ closed: item.closed }">
+      <app-main-menu *ngIf="item.children" [menu]='item.children' [level]='level + 1'></app-main-menu>
+    </div>
+  </li>
+</ul>
